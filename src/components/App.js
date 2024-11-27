@@ -32,10 +32,16 @@ function App() {
     }
   };
 
+  const handleMarkAllPacked = () => {
+    setItem(prevItem =>
+      prevItem.map(item => ({ ...item, packed: true }))
+    );
+  }
+
   return (
     <div className="app">
       <Logo />
-      <Form handleAddItems={handleAddItems} handleDeleteAll={handleDeleteAll}/>
+      <Form handleAddItems={handleAddItems} handleDeleteAll={handleDeleteAll} handleMarkAllPacked={handleMarkAllPacked}/>
       <PackingList item={item} handleDeleteItem={handleDeleteItem} handleUpdateItem = {handleUpdateItem}/>
       <Stats item={item}/>
     </div>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function Form({handleAddItems, handleDeleteAll}) {
+export default function Form({handleAddItems, handleDeleteAll, handleMarkAllPacked}) {
 
 
     const [description, setDescription] = useState("");
@@ -31,6 +31,7 @@ export default function Form({handleAddItems, handleDeleteAll}) {
         <input type="text" placeholder="item..." value={description} onChange={(e) => setDescription(e.target.value)} />
         <button>ADD</button>
         <button onClick={()=> handleDeleteAll()} >Delete All</button>
+        <button onClick={()=> handleMarkAllPacked()} >Check All</button>
       </form>
     );
   }
